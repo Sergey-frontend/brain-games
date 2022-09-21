@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Sergey-frontend/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/Sergey-frontend/frontend-project-44#readme"
+  "homepage": "https://github.com/Sergey-frontend/frontend-project-44#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
 }

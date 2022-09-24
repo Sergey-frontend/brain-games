@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Sergey-frontend/frontend-project-44#readme",
   "devDependencies": {
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }

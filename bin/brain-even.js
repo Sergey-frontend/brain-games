@@ -3,27 +3,29 @@ import readlineSync from 'readline-sync';
 console.log('Welcome to the Brain Games!');
 
 const name = readlineSync.question('May I have your name?: ');
-console.log(name);
+console.log(`Hello, ${name}!`);
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".')
 
-const randomNumber = Math.round(Math.random() * 100);
+let randomNumber = Math.round(Math.random() * 100);
 
-const quest1 = readlineSync.question(`Question: ${randomNumber} `);
-// конструкция для проверки ответов
-const checkQuest = () => {
-    if (randomNumber % 2 === 0 && quest1 === 'yes') {
-    return 'Correct!';
-} else if (randomNumber % 2 !== 0 && quest1 === 'no') {
-    return 'Correct!';
-} else if (randomNumber % 2 === 0 && quest1 === 'no') {
-    return `'no' is wrong answer ;(. Correct answer was 'yes' \nLet's try again, ${name}!`
-} else if (randomNumber % 2 !== 0 && quest1 === 'yes') {
-    return `'yes' is wrong answer ;(. Correct answer was 'no' \nLet's try again, ${name}!`
-} else if (randomNumber % 2 === 0 && (quest1 !== 'yes' || quest1 !== 'no')) {
-    return `${quest1} is wrong answer ;(. Correct answer was 'yes' \nLet's try again, ${name}!`
-} else if (randomNumber % 2 !== 0 && (quest1 !== 'yes' || quest1 !== 'no')) {
-    return `${quest1} is wrong answer ;(. Correct answer was 'no' \nLet's try again, ${name}!`
+const userAnswer = readlineSync.question(`Question: ${randomNumber} `);
+
+const isEven = randomNumber => randomNumber % 2 === 0;
+const expectedAnswer = isEven(randomNumber) ? 'yes' : 'no';
+if (expectedAnswer === userAnswer) {
+  console.log('Correct!');
 }
+
+const isNotEven = randomNumber => randomNumber % 2 !== 0;
+const wrongAnswer = isNotEven(randomNumber) ? 'yes' : 'no';
+if (wrongAnswer === userAnswer) {
+  console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
 }
-console.log(checkQuest())
+
+const thisIsNotAnAnswer = () => {
+    if (userAnswer !== 'yes' && userAnswer !== 'no') {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
+    }
+}
+thisIsNotAnAnswer();

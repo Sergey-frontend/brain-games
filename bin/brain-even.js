@@ -10,7 +10,7 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".')
 const randomNumber = Math.round(Math.random() * 100);
 
 const quest1 = readlineSync.question(`Question: ${randomNumber} `);
-
+// конструкция для проверки ответов
 const checkQuest = () => {
     if (randomNumber % 2 === 0 && quest1 === 'yes') {
     return 'Correct!';

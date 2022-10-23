@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
@@ -9,7 +10,7 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".')
 
 
 for (let i = 0; i < 3;i += 1) {
-  
+
   let randomNumber = Math.round(Math.random() * 100);
   const userAnswer = readlineSync.question(`Question: ${randomNumber} `);
 
@@ -27,9 +28,10 @@ for (let i = 0; i < 3;i += 1) {
   } else if (userAnswer !== 'yes' && userAnswer !== 'no') {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
     break;
-      } 
+      }
+    if (i === 2) {
+        console.log(`Congratulations, ${name}`)
+      }
 }
 
-// if (i === 2) {
-//   console.log('helllllllllo')
-// }
+

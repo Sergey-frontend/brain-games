@@ -23,7 +23,7 @@ for (let i = 0; i < 3; i += 1) {
             const result = randomNumber1 + randomNumber2;
             if (userResult === result) {
                 console.log('Correct!');
-            } else if (userResult !== result) {
+            } else {
                 console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again,${name}!`);
             }
             break;

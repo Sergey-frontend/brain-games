@@ -2,15 +2,14 @@ import { name } from "../src/index.js";
 import readlineSync from "readline-sync";
 
 export const brainGcd = () => {
-    
   console.log("Find the greatest common divisor of given numbers.");
 
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber1 = Math.round(Math.random() * 200);
-    const randomNumber2 = Math.round(Math.random() * 200);
+    let randomNumber1 = Math.round(Math.random() * 200);
+    let randomNumber2 = Math.round(Math.random() * 200);
 
     const userAnswer = readlineSync.question(
-      `Question: ${randomNumber1} ${randomNumber2}`
+      `Question: ${randomNumber1} ${randomNumber2} `
     );
     const typeNumberOfUserAnswer = Number(userAnswer);
 
@@ -29,6 +28,9 @@ export const brainGcd = () => {
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${gcd}'.\nLet's try again,${name}!`
       );
       break;
+    }
+    if (i === 2) {
+      console.log(`Congratulations, ${name}`);
     }
   }
 };

@@ -18,10 +18,12 @@ export const brainProg = () => {
     progressionArr[middleSymbol] = "...";
     const progressionString = progressionArr.join();
     const userAnswer = readlineSync.question(`Question: ${progressionString} `);
+
     if (Number(userAnswer) === correctAnswer) {
       console.log("Correct!");
     } else {
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again,${name}!`;
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again,${name}!`);
+      break;
     }
     if (i === 2) {
       console.log(`Congratulations, ${name}`);

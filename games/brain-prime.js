@@ -7,7 +7,7 @@ export const brainPrime = () => {
   for (let i = 0; i < 3; i += 1) {
     const randomNamber = Math.floor(Math.random() * (15 - 3 + 1)) + 3;
     const userAnswer = readlineSync.question(`Question: ${randomNamber} `);
-    
+
     let correctAnswer = "yes";
 
     for (let x = 2; x < randomNamber; x += 1) {
@@ -25,7 +25,7 @@ export const brainPrime = () => {
       break;
     }
     if (i === 2) {
-      console.log(`Congratulations, ${name}`);
+      console.log(`Congratulations, ${name}!`);
     }
   }
 };

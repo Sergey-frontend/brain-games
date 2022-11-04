@@ -2,7 +2,7 @@ import {name} from "../src/index.js";
 import readlineSync from "readline-sync";
 
 export const brainCalc = () => {
-  console.log("What is the result of the expression?");
+  console.log('What is the result of the expression?');
 
   for (let i = 0; i < 3; i += 1) {
     let randomNumber1 = Math.round(Math.random() * 50);
@@ -39,9 +39,7 @@ export const brainCalc = () => {
     if (typeNumberOfUserAnswer === result) {
       console.log("Correct!");
     } else {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`
-      );
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
       break;
     }
     if (i === 2) {

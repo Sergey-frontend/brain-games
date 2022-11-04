@@ -5,11 +5,11 @@ export const brainGcd = () => {
   console.log("Find the greatest common divisor of given numbers.");
 
   for (let i = 0; i < 3; i += 1) {
-    let randomNumber1 = Math.round(Math.random() * 200);
-    let randomNumber2 = Math.round(Math.random() * 200);
+    let randomNumber1 = Math.round(Math.random() * 100);
+    let randomNumber2 = Math.round(Math.random() * 100);
 
     const userAnswer = readlineSync.question(
-      `Question: ${randomNumber1} ${randomNumber2} `
+      `Question: ${randomNumber1} ${randomNumber2}\nYour answer: `
     );
     const typeNumberOfUserAnswer = Number(userAnswer);
 
@@ -25,7 +25,7 @@ export const brainGcd = () => {
       console.log("Correct!");
     } else {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${gcd}'.\nLet's try again,${name}!`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${gcd}'.\nLet's try again, ${name}!`
       );
       break;
     }

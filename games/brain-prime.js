@@ -6,7 +6,7 @@ export const brainPrime = () => {
 
   for (let i = 0; i < 3; i += 1) {
     const randomNamber = Math.floor(Math.random() * (15 - 3 + 1)) + 3;
-    const userAnswer = readlineSync.question(`Question: ${randomNamber} `);
+    const userAnswer = readlineSync.question(`Question: ${randomNamber}\nYour answer: `);
 
     let correctAnswer = "yes";
 
@@ -20,7 +20,7 @@ export const brainPrime = () => {
       console.log("Correct!");
     } else {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again,${name}!`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`
       );
       break;
     }

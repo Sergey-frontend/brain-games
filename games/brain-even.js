@@ -22,9 +22,7 @@ export const brainEven = () => {
       );
       break;
     } else if (userAnswer !== "yes" && userAnswer !== "no") {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`
-      );
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.\nLet's try again,${name}!`);
       break;
     }
     if (i === 2) {

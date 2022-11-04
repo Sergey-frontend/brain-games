@@ -6,7 +6,7 @@ export const brainEven = () => {
 
   for (let i = 0; i < 3; i += 1) {
     let randomNumber = Math.round(Math.random() * 100);
-    const userAnswer = readlineSync.question(`Question: ${randomNumber} `);
+    const userAnswer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
 
     const isEven = (randomNumber) => randomNumber % 2 === 0;
     const expectedAnswer = isEven(randomNumber) ? "yes" : "no";
@@ -17,12 +17,10 @@ export const brainEven = () => {
     if (expectedAnswer === userAnswer) {
       console.log("Correct!");
     } else if (wrongAnswer === userAnswer) {
-      console.log(
-        `'${wrongAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`
-      );
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.\nLet's try again, ${name}!`);
       break;
     } else if (userAnswer !== "yes" && userAnswer !== "no") {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.\nLet's try again,${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.\nLet's try again, ${name}!`);
       break;
     }
     if (i === 2) {

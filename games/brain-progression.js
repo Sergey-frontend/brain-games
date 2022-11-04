@@ -15,9 +15,9 @@ export const brainProg = () => {
     }
     const middleSymbol = Math.round((progressionArr.length - 1) / 2);
     const correctAnswer = Number(progressionArr[middleSymbol]);
-    progressionArr[middleSymbol] = "...";
+    progressionArr[middleSymbol] = "..";
     const progressionString = progressionArr.join();
-    const userAnswer = readlineSync.question(`Question: ${progressionString} `);
+    const userAnswer = readlineSync.question(`Question: ${progressionString}\nYour answer: `);
 
     if (Number(userAnswer) === correctAnswer) {
       console.log("Correct!");

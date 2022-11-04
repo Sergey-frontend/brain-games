@@ -40,7 +40,7 @@ export const brainCalc = () => {
       console.log("Correct!");
     } else {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again,${name}!`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`
       );
       break;
     }

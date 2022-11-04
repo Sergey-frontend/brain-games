@@ -5,8 +5,8 @@ export const brainCalc = () => {
   console.log("What is the result of the expression?");
 
   for (let i = 0; i < 3; i += 1) {
-    let randomNumber1 = Math.round(Math.random() * 200);
-    let randomNumber2 = Math.round(Math.random() * 200);
+    let randomNumber1 = Math.round(Math.random() * 50);
+    let randomNumber2 = Math.round(Math.random() * 50);
 
     const operands = ["+", "-", "*"];
     const operand = Math.floor(Math.random() * operands.length);
@@ -17,19 +17,19 @@ export const brainCalc = () => {
     switch (randomOperand) {
       case "+":
         userAnswer = readlineSync.question(
-          `Question: ${randomNumber1} + ${randomNumber2} `
+          `Question: ${randomNumber1} + ${randomNumber2}\nYour answer: `
         );
         result = randomNumber1 + randomNumber2;
         break;
       case "-":
         userAnswer = readlineSync.question(
-          `Question: ${randomNumber1} - ${randomNumber2} `
+          `Question: ${randomNumber1} - ${randomNumber2}\nYour answer: `
         );
         result = randomNumber1 - randomNumber2;
         break;
       case "*":
         userAnswer = readlineSync.question(
-          `Question: ${randomNumber1} * ${randomNumber2} `
+          `Question: ${randomNumber1} * ${randomNumber2}\nYour answer: `
         );
         result = randomNumber1 * randomNumber2;
         break;

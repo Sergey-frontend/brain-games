@@ -1,56 +1,41 @@
-import readlineSync from 'readline-sync';
-import name from '../index.js';
-// основные переменные
+import { getRandomNumber } from '../helper.js';
+import runGame from '../index.js';
+
 const description = 'What is the result of the expression?';
-let userAnswer;
-let result;
+const operationSymbols = ['+', '-', '*'];
 
 // создание рандомного оператора
-const getRandomOperator = () => {
-  const operands = ['+', '-', '*'];
-  const operand = Math.floor(Math.random() * operands.length);
-  const randomOperand = operands[operand];
-  return randomOperand;
+const getRandomOperation = () => {
+  const randomOperand = Math.floor(Math.random() * operationSymbols.length);
+  const operand = operationSymbols[randomOperand];
+  return operand;
 };
 
 // использование свича для конструкции
-// с добавлением рандомных чисел
-const caseForRandomoperator = () => {
-  const randomNumber1 = Math.round(Math.random() * 50);
-  const randomNumber2 = Math.round(Math.random() * 50);
-  switch (getRandomOperator()) {
+const calculateOperations = (symbol, firstValue, secondValue) => {
+  switch (symbol) {
     case '+':
-      userAnswer = readlineSync.question(`Question: ${randomNumber1} + ${randomNumber2}\nYour answer: `);
-      result = randomNumber1 + randomNumber2;
-      break;
+      return firstValue + secondValue;
     case '-':
-      userAnswer = readlineSync.question(`Question: ${randomNumber1} - ${randomNumber2}\nYour answer: `);
-      result = randomNumber1 - randomNumber2;
-      break;
+      return firstValue - secondValue;
     case '*':
-      userAnswer = readlineSync.question(`Question: ${randomNumber1} * ${randomNumber2}\nYour answer: `);
-      result = randomNumber1 * randomNumber2;
-      break;
+      return firstValue * secondValue;
     default:
-      break;
+      return null;
   }
 };
 
+const getQuestionAndAnswer = () => {
+  const randomSymbol = getRandomOperation(operationSymbols);
+  const firstNumber = getRandomNumber(0, 50);
+  const secondNumber = getRandomNumber(0, 50);
+
+  const question = `${firstNumber} ${randomSymbol} ${secondNumber}`;
+  const correctAnswer = String(calculateOperations(randomSymbol, firstNumber, secondNumber));
+
+  return [question, correctAnswer];
+};
 const brainCalc = () => {
-  console.log(description);
-  for (let i = 0; i < 3; i += 1) {
-    caseForRandomoperator();
-    const typeNumberOfUserAnswer = Number(userAnswer);
-    if (typeNumberOfUserAnswer === result) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
-      break;
-    }
-    if (i === 2) {
-      console.log(`Congratulations, ${name}!`);
-    }
-  }
+  runGame(description, getQuestionAndAnswer);
 };
-
 export default brainCalc;

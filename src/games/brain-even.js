@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import name from '../index.js';
+
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const brainEven = () => {
   console.log(description);

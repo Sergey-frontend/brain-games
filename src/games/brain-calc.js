@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import name from '../src/index.js';
+import name from '../index.js';
 
 const brainCalc = () => {
   console.log('What is the result of the expression?');

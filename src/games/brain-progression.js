@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import name from '../src/index.js';
+import name from '../index.js';
 
 const brainProg = () => {
   console.log('What number is missing in the progression?');

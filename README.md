@@ -7,8 +7,9 @@ Welcome to Brain-games!
 There are 4 games for you:
 1. brain-calc: calculate operation expression,
 2. brain-even: determine if a number is even,
-3. brain progression: determine which number is missing in the progression,
-4. brain prime: determine if a number is prime.
+3. brain-progression: determine which number is missing in the progression,
+4. brain-prime: determine if a number is prime,
+5. brain-gcd: 
 
 Games demo video:
 

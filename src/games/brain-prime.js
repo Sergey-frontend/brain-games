@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import name from '../src/index.js';
+import name from '../index.js';
 
 const brainPrime = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');

@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import name from '../index.js';
-
+const description = 'What number is missing in the progression?';
 const brainProg = () => {
-  console.log('What number is missing in the progression?');
+  console.log(description);
 
   for (let i = 0; i < 3; i += 1) {
     let startProgNamber = Math.round(Math.random() * 50);

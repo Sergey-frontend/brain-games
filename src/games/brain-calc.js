@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import name from '../index.js';
 // основные переменные
+const description = 'What is the result of the expression?';
 let userAnswer;
 let result;
 
@@ -36,7 +37,7 @@ const caseForRandomoperator = () => {
 };
 
 const brainCalc = () => {
-  console.log('What is the result of the expression?');
+  console.log(description);
   for (let i = 0; i < 3; i += 1) {
     caseForRandomoperator();
     const typeNumberOfUserAnswer = Number(userAnswer);

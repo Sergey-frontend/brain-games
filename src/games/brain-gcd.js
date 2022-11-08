@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import name from '../index.js';
-
+const description = 'Find the greatest common divisor of given numbers.';
 const brainGcd = () => {
-  console.log('Find the greatest common divisor of given numbers.');
+  console.log(description);
 
   for (let i = 0; i < 3; i += 1) {
     let randomNumber1 = Math.round(Math.random() * 50);

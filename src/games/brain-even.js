@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import name from '../index.js';
-
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const brainEven = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log(description);
 
   for (let i = 0; i < 3; i += 1) {
     const randomNumber = Math.round(Math.random() * 100);

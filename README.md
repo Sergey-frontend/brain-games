@@ -23,5 +23,5 @@
 <h2>How to install:</h2>
 <p>Download games using command 'gh repo clone Sergey-frontend/frontend-project-44'</p>
 <p>Go to directory, use command 'cd frontend-project-44'</p>
-<p>Use command 'npm link'</p>
+<p>Use command 'sudo npm link'</p>
 <p>And write the name of any game(for example 'brain-calc')</p>

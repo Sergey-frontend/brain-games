@@ -1,17 +1,15 @@
-import { getRandomNumber } from '../helper.js';
+import getRandomNumber from '../helper.js';
 import runGame from '../index.js';
 
 const description = 'What is the result of the expression?';
 const operationSymbols = ['+', '-', '*'];
 
-// создание рандомного оператора
-const getRandomOperation = () => {
+const getRandomOperation = (arr) => {
   const randomOperand = Math.floor(Math.random() * operationSymbols.length);
-  const operand = operationSymbols[randomOperand];
+  const operand = arr[randomOperand];
   return operand;
 };
 
-// использование свича для конструкции
 const calculateOperations = (symbol, firstValue, secondValue) => {
   switch (symbol) {
     case '+':

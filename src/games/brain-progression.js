@@ -2,25 +2,25 @@ import getRandomNumber from '../helper.js';
 import runGame from '../index.js';
 
 const description = 'What number is missing in the progression?';
+const progressionLength = 10;
 
-const getProgression = () => {
-  const startProgNamber = getRandomNumber(0, 50);
-  const randomStepOfProg = getRandomNumber(2, 10);
-  const progressionArr = [];
-  let result = startProgNamber;
-  for (let i = 1; i <= 10; i += 1) {
-    progressionArr.push(result);
-    result += randomStepOfProg;
+const getProgression = (startNum, step) => {
+  const progression = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(startNum + step * i);
   }
-  return progressionArr;
+  return progression;
 };
 
 const getQuestionAndAnswer = () => {
-  const randomSymbol = getRandomNumber(1, 9);
-  const prog = getProgression();
-  const correctAnswer = prog[randomSymbol].toString();
-  prog[randomSymbol] = '..';
-  const question = prog.join(' ');
+  const startNum = getRandomNumber(0, 50);
+  const step = getRandomNumber(2, 9);
+  const progression = getProgression(startNum, step);
+  const randomIndex = getRandomNumber(0, 9);
+
+  const correctAnswer = String(progression[randomIndex]);
+  progression[randomIndex] = '..';
+  const question = progression.join(' ');
 
   return [question, correctAnswer];
 };

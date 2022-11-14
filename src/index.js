@@ -20,7 +20,9 @@ const runGame = (gameDescription, questionAndAnswer) => {
       console.log(`Let's try again, ${name}!`);
       break;
     }
-    console.log(`Congratulations, ${name}!`);
+    if (i === 2) {
+      console.log(`Congratulations, ${name}!`);
+    }
   }
 };
 export default runGame;

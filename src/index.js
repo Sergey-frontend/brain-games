@@ -12,19 +12,16 @@ const printQuestion = (question) => {
   console.log(`Question: ${question}`);
 };
 
-const getUserAnswer = () => {
-  return readlineSync.question('Your answer: ');
-};
+const getUserAnswer = () => readlineSync.question('Your answer: ');
 
 const checkAnswer = (userAnswer, correctAnswer, name) => {
   if (correctAnswer === userAnswer) {
     console.log('Correct!');
     return true;
-  } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-    console.log(`Let's try again, ${name}!`);
-    return false;
   }
+  console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+  console.log(`Let's try again, ${name}!`);
+  return false;
 };
 
 const congratulateUser = (name) => {

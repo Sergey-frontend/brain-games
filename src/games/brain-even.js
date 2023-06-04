@@ -5,7 +5,7 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const isEven = (num) => num % 2 === 0;
 
-const getQuestionAndAnswer = () => {
+const generateEvenQuestionAndAnswer = () => {
   const randomNumber = getRandomNumber(0, 50);
   const question = `${randomNumber}`;
   const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
@@ -13,7 +13,7 @@ const getQuestionAndAnswer = () => {
 };
 
 const brainEven = () => {
-  runGame(description, getQuestionAndAnswer);
+  runGame(description, generateEvenQuestionAndAnswer);
 };
 
 export default brainEven;

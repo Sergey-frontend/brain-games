@@ -12,7 +12,7 @@ const isPrime = (x) => {
   return true;
 };
 
-const getQuestionAndAnswer = () => {
+const generatePrimeQuestionAndAnswer = () => {
   const firstNumber = getRandomNumber(3, 15);
   const question = `${firstNumber}`;
   const correctAnswer = isPrime(firstNumber) ? 'yes' : 'no';
@@ -20,7 +20,7 @@ const getQuestionAndAnswer = () => {
 };
 
 const brainPrime = () => {
-  runGame(description, getQuestionAndAnswer);
+  runGame(description, generatePrimeQuestionAndAnswer);
 };
 
 export default brainPrime;
